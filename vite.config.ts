@@ -1,6 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
+const dev = process.argv.includes('dev');
+
 export default defineConfig({
-	plugins: [sveltekit()]
+	plugins: [sveltekit()],
+	base: dev ? '' : '/VehicleRent/' // 🔥 change YOUR_REPO_NAME
 });
